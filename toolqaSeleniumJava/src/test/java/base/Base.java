@@ -1,7 +1,6 @@
 package base;
 
 import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -56,9 +55,8 @@ public class Base {
         driver.get(url);
     }
 
+
     public void closeBrowser() {
         driver.quit();
     }
-
-    // Otros métodos comunes
 }
