@@ -50,7 +50,10 @@ public class BaseClass {
             return false;
         }
     }
-
+	public int returnLength(By locator) {
+		 return driver.findElements(locator).size();
+	}
+	
     public void openUrl(String url) {
         driver.get(url);
     }

@@ -1,5 +1,4 @@
 package com.toolsqa.pages.elements;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -12,18 +11,36 @@ public class CheckBoxPage extends BaseClass{
 	By resultText = By.xpath("//*[@id='result']");
 	public CheckBoxPage(WebDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
 	}
 
 	
 	public void expand() {
 		click(expandButton);
 	}
-	public Boolean CheckExpandSelect() {
+	public Boolean checkExpandSelect() {
 		return isDisplayed(expandButton);
 		
 	}
 	
+	public int elementslength() {
+          return returnLength(allToggleCollapse);
+	}
 	
+	public void clickCollapseButton() {
+		click(collapseButton);
+		
+	}
+	
+   public Boolean checkCollapseButtonIsDisplayed() {
+	   return isDisplayed(collapseButton);
+   }
 
+   public void expandAndCheck() {
+       expand();
+       checkExpandSelect();
+   }
+   public void collapseAndCheck() {
+	   	clickCollapseButton();
+    	checkCollapseButtonIsDisplayed();
+   }
 }

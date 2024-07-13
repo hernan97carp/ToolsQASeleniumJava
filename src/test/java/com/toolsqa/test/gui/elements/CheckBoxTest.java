@@ -1,10 +1,12 @@
 package com.toolsqa.test.gui.elements;
-
+import org.junit.*;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
+
+
 import com.toolsqa.base.BaseClass;
 import com.toolsqa.pages.elements.CheckBoxPage;
 public class CheckBoxTest {
@@ -23,12 +25,15 @@ public class CheckBoxTest {
     
     }
 
-    @Test
-    public void testCheckBox () {
-    	checkBoxPage.expand();
-    	checkBoxPage.CheckExpandSelect();
-    	
+    @Test 
+    public void testExpandAndCollapseAll() {
+    	checkBoxPage.expandAndCheck();
+    	Assert.assertEquals(17, checkBoxPage.elementslength());	
+    	checkBoxPage.collapseAndCheck();
+    	Assert.assertEquals(1, checkBoxPage.elementslength());	
     }
+    
+    
   
     @After
     public void tearDown() throws Exception {
