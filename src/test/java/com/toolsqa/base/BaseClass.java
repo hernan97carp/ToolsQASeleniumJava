@@ -7,15 +7,24 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class BaseClass {
-    protected WebDriver driver;
+    public static WebDriver driver;
+
+    public BaseClass() {
+        // Constructor predeterminado
+    }
 
     public BaseClass(WebDriver driver) {
-        this.driver = driver;
+        BaseClass.driver = driver;
+    }
+
+    public WebDriver initializeChromeDriver() {
+       return chromeDriveConnection();
     }
 
     public WebDriver chromeDriveConnection() {
         System.setProperty("webdriver.chrome.driver", "./src/test/resources/chromedriver/chromedriver.exe");
         driver = new ChromeDriver();
+        maximize();
         return driver;
     }
 
@@ -50,16 +59,17 @@ public class BaseClass {
             return false;
         }
     }
-	public int returnLength(By locator) {
-		 return driver.findElements(locator).size();
-	}
-	
+
+    public int returnLength(By locator) {
+        return driver.findElements(locator).size();
+    }
+
     public void openUrl(String url) {
         driver.get(url);
     }
 
-
-    public void closeBrowser() {
+    protected static void quit() {
         driver.quit();
     }
 }
+

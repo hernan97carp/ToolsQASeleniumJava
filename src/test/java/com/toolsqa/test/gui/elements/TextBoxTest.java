@@ -1,17 +1,18 @@
 package com.toolsqa.test.gui.elements;
 
-import org.junit.After;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 
 import com.github.javafaker.Faker;
 import com.toolsqa.base.BaseClass;
+import com.toolsqa.base.BaseTest;
 import com.toolsqa.pages.elements.TextBoxPage;
 
 import static org.junit.Assert.assertEquals;
 
-public class TextBoxTest {
+public class TextBoxTest extends BaseTest  {
 
     private WebDriver driver;
     private TextBoxPage textBoxPage;
@@ -42,8 +43,4 @@ public class TextBoxTest {
         assertEquals("Permananet Address :" + permanentAddress, textBoxPage.getPermanentAddressConfirmation());
     }
 
-    @After
-    public void tearDown() throws Exception {
-        base.closeBrowser();
-    }
 }

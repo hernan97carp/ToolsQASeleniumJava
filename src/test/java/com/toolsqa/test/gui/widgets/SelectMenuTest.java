@@ -1,6 +1,5 @@
 package com.toolsqa.test.gui.widgets;
 
-import org.junit.After;
 import org.junit.Before;
 
 import org.junit.Test;
@@ -8,9 +7,10 @@ import static org.junit.Assert.*;
 import org.openqa.selenium.WebDriver;
 
 import com.toolsqa.base.BaseClass;
+import com.toolsqa.base.BaseTest;
 import com.toolsqa.pages.widgets.SelectMenuPage;
 
-public class SelectMenuTest {
+public class SelectMenuTest extends BaseTest {
 
     private WebDriver driver;
     private SelectMenuPage selectMenuPage;
@@ -38,9 +38,6 @@ public class SelectMenuTest {
 
 
 
-    @After
-    public void tearDown() throws Exception {
-        base.closeBrowser();
-    }
+
 }
 
